@@ -1,0 +1,50 @@
+# Docker Composeのバージョンを指定（省略可能）
+# version: '3.8'
+
+# サービス（コンテナ）の定義
+services:
+  # Nginxサービスの設定
+  nginx:
+    image: nginx:latest # 最新のNginxイメージを使用
+    ports:
+      - "8080:80" # ホストの8080ポートをコンテナの80ポートにマッピング
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf # Nginx設定ファイルをマウント
+      - ./www:/var/www/html # Webコンテンツをマウント
+    depends_on:
+      - php # PHPサービスが起動した後に起動
+
+  # PHPサービスの設定
+  php:
+    build:
+      context: . # ビルドコンテキストを現在のディレクトリに設定
+      dockerfile: Dockerfile-php # 使用するDockerfileを指定
+    volumes:
+      - ./www:/var/www/html # PHPファイルをマウント
+
+  # MySQLサービスの設定
+  db:
+    image: mysql:8.0 # MySQL 8.0イメージを使用
+    platform: linux/arm64/v8 # ARM64アーキテクチャ用のイメージを指定（M1 Mac用）
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword # MySQLのroot用パスワード
+      MYSQL_DATABASE: crudapp # 作成するデータベース名
+      MYSQL_USER: cruduser # 作成するMySQLユーザー名
+      MYSQL_PASSWORD: crudpassword # 作成するMySQLユーザーのパスワード
+    volumes:
+      - db_data:/var/lib/mysql # MySQLデータを永続化
+
+  # phpMyAdminサービスの設定
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin # phpMyAdminの公式イメージを使用
+    links:
+      - db:db # dbサービスとリンク
+    ports:
+      - 8081:80 # ホストの8081ポートをコンテナの80ポートにマッピング
+    environment:
+      MYSQL_USERNAME: cruduser # phpMyAdminのデフォルトユーザー名
+      MYSQL_ROOT_PASSWORD: rootpassword # phpMyAdminのrootパスワード
+
+# 名前付きボリュームの定義
+volumes:
+  db_data: # MySQLデータを保存するための永続ボリューム

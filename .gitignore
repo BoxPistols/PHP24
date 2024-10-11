@@ -1,0 +1,95 @@
+/app/tmp/*
+/app/Config/core.php
+/app/Config/database.php
+/vendors/*
+
+# ============================
+# PHP関連
+# ============================
+
+# Composer依存関係を除外
+/vendor/
+
+# Composerのロックファイルを除外（必要に応じて）
+# /composer.lock
+
+# PHPStormや他のIDEの設定ファイルを除外
+/.idea/
+/*.phpstorm.meta.php
+
+# ============================
+# Node.js関連（BrowserSyncなどを使用している場合）
+# ============================
+
+# Nodeモジュールを除外
+/node_modules/
+
+# npmまたはyarnのログファイルを除外
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ビルド成果物を除外（必要に応じて）
+/dist/
+/build/
+
+# ============================
+# Docker関連
+# ============================
+
+# Docker Composeのオーバーライドファイルを除外
+docker-compose.override.yml
+
+# Docker関連の設定やデータを含むディレクトリを除外（必要に応じて）
+.docker/
+docker/
+**/Dockerfile*
+
+# Dockerボリュームやコンテナのデータを除外（通常はバージョン管理しません）
+/var/lib/mysql/
+# 他のボリュームパスがあれば追加
+
+# ============================
+# 環境変数ファイル
+# ============================
+
+# 環境変数ファイルを除外（セキュリティ上重要）
+.env
+.env.*.local
+
+# ============================
+# テスト関連
+# ============================
+
+# PHPUnitのキャッシュやレポートを除外
+/phpunit.xml
+/phpunit.xml.dist
+/tests/_output/
+tests/_support/_generated/
+
+# ============================
+# その他の一般的な除外項目
+# ============================
+
+# OS固有のファイルを除外
+.DS_Store
+Thumbs.db
+
+# エディタやIDE固有のディレクトリやファイルを除外
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# ログファイルを除外
+*.log
+
+# 一時ファイルやバックアップファイルを除外
+*.swp
+*.swo
+*.tmp
+*.bak
+*.backup
+
+# キャッシュファイルを除外
+/cache/
+/tmp/
