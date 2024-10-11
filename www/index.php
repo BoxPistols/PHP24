@@ -72,7 +72,7 @@ $result = $conn->query("SELECT * FROM memos ORDER BY created_at DESC");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>シンプルメモアプリ</title>
+  <title>Simple Memo</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -122,7 +122,7 @@ $result = $conn->query("SELECT * FROM memos ORDER BY created_at DESC");
 </head>
 
 <body>
-  <h1>シンプルメモアプリ</h1>
+  <h1>Simple Memo</h1>
   <form method="post">
     <textarea name="content" required></textarea>
     <button type="submit">メモを追加</button>

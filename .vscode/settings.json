@@ -1,0 +1,20 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true
+  },
+  // Mainly for static files
+  "liveServer.settings.useWebExt": true,
+  // This means that you change your real URL (current PHP url) 
+  // to another URL (which Live Sever starts).
+  "liveServer.settings.proxy": {
+    "enable": true, //   i. enabled
+    "baseUri": "/", //  ii. workspace
+    "proxyUri": "http://localhost:8080/" // iii. actual address
+  },
+}

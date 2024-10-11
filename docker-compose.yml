@@ -45,6 +45,19 @@ services:
       MYSQL_USERNAME: cruduser # phpMyAdminのデフォルトユーザー名
       MYSQL_ROOT_PASSWORD: rootpassword # phpMyAdminのrootパスワード
 
+  # LiveReload
+  livereload:
+    image: node:latest
+    working_dir: /
+    volumes:
+      - .:/
+      - /node_modules
+    command: npm run start:lr
+    ports:
+      - "35729:35729" # LiveReloadのポート
+    depends_on:
+      - nginx
+
 # 名前付きボリュームの定義
 volumes:
   db_data: # MySQLデータを保存するための永続ボリューム

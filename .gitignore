@@ -76,7 +76,7 @@ tests/_support/_generated/
 Thumbs.db
 
 # エディタやIDE固有のディレクトリやファイルを除外
-.vscode/
+# .vscode/
 *.sublime-project
 *.sublime-workspace
 

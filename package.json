@@ -1,1 +1,9 @@
-{ "dependencies": { "connect-livereload": "^0.6.1", "livereload": "^0.9.3" } }
+{
+  "scripts": {
+    "start": "livereload ./www --port 35729"
+  },
+  "dependencies": {
+    "connect-livereload": "^0.6.1",
+    "livereload": "^0.9.3"
+  }
+}
