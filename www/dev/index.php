@@ -26,6 +26,17 @@
     $name = "PHP";
     echo "Hello! $name";
     ?>
+  </h1>
+  <div>
+    <?php
+    // 時刻
+    echo "<br>";
+    $today = new DateTime(); // 現在の日時を取得
+    $today->setTimezone(new DateTimeZone("Asia/Tokyo")); // タイムゾーンを設定
+    echo $today->format("Y-m-d H:i:s"); // 日時を表示
+    echo "<br>";
+    ?>
+  </div>
 </body>
 
 </html>
