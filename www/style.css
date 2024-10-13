@@ -1,0 +1,70 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  overscroll-behavior: none;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 100%;
+  font-size: 0.9rem;
+  background-color: #fff;
+}
+
+form textarea {
+  min-height: 240px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: #f0f0f0;
+  margin-bottom: 10px;
+  padding: 10px;
+  /* max-height: 320px; */
+  overflow: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-left: 10px solid #333;
+}
+
+button {
+  text-align: right;
+}
+
+h2.heading_2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.memo-content {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.memo-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.update-form {
+  display: none;
+}
+
+.show-update-form {
+  margin-right: 10px;
+}

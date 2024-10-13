@@ -17,4 +17,5 @@
     "baseUri": "/", //  ii. workspace
     "proxyUri": "http://localhost:8080/" // iii. actual address
   },
+  "php.version": "8.3",
 }

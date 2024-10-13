@@ -72,63 +72,20 @@ $result = $conn->query("SELECT * FROM memos ORDER BY created_at DESC");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/asagiri@0.1.1/css/main.min.css">
+  <link rel="stylesheet" href="style.css">
   <title>Simple Memo</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    form {
-      margin-bottom: 20px;
-    }
-
-    textarea {
-      width: 100%;
-      height: 100px;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    li {
-      background: #f0f0f0;
-      margin-bottom: 10px;
-      padding: 10px;
-    }
-
-    .memo-content {
-      margin-bottom: 10px;
-    }
-
-    .memo-actions {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .update-form {
-      display: none;
-    }
-
-    .show-update-form {
-      margin-right: 10px;
-    }
-  </style>
 </head>
 
 <body>
   <h1>Simple Memo</h1>
-  <form method="post">
+  <form method="post" style="margin-bottom: 20px; display: grid; gap: 10px; grid-template-columns: 1fr auto; align-items: end;">
     <textarea name="content" required></textarea>
     <button type="submit">メモを追加</button>
   </form>
 
-  <h2>メモ一覧</h2>
+  <h2
+    class="heading_2">メモ一覧</h2>
   <ul>
     <?php while ($row = $result->fetch_assoc()): ?>
       <li>
