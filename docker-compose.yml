@@ -51,12 +51,14 @@ services:
     working_dir: /
     volumes:
       - .:/
-      - /node_modules
+      - /app/node_modules
     command: npm run start:lr
     ports:
       - "35729:35729" # LiveReloadのポート
     depends_on:
       - nginx
+    environment:
+      - ENABLE_LIVERELOAD=${ENABLE_LIVERELOAD:-false}
 
 # 名前付きボリュームの定義
 volumes:
